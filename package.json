@@ -1,0 +1,13 @@
+{
+  "name": "mega-tiny-proxy",
+  "version": "0.0.1",
+  "description": "A fun, tiny proxy for when you barely care.",
+  "main": "proxy.js",
+  "author": "Mason Stewart <masondesu@gmail.com> (https://twitter.com/masondesu)",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^0.6.2",
+    "express": "^4.4.5",
+    "http-proxy": "^1.1.4"
+  }
+}

@@ -42,10 +42,7 @@ function reportProxy(req, url){
 // Config
 /////////////////////////////////////////
 
-app.configure(function(){
-    app.use(allowCrossDomain);
-    app.set('port', process.env.PORT || 3000);
-});
+app.use(allowCrossDomain);
 
 
 //////////////////////////////////////////
@@ -53,7 +50,7 @@ app.configure(function(){
 //////////////////////////////////////////
 
 app.use('/api/collections/:collId', function(req, res) {
-  var url = "http://your-really-cool-api.com/v1/collections/" + req.params.collId; 
+  var url = "http://tiny-pizza-server.herokuapp.com/collections/" + req.params.collId; 
   reportProxy(req, url);
   req.pipe(request(url)).pipe(res);
 });
@@ -63,7 +60,7 @@ app.use('/api/collections/:collId', function(req, res) {
 // Go for the Gold!
 //////////////////////////////////////////
 
-app.listen();
+app.listen(3000);
 
 console.log("Hey!".red + " Welcome to ".blue + "Mega Tiny Proxy".yellow + "!".blue + "\
              \nWaiting to make your dreams come true...".green + "♡".magenta);

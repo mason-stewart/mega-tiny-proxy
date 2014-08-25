@@ -49,8 +49,10 @@ app.use(allowCrossDomain);
 // Forwarding Rules
 //////////////////////////////////////////
 
-app.use('/api/collections/:collId', function(req, res) {
-  var url = "http://tiny-pizza-server.herokuapp.com/collections/" + req.params.collId; 
+app.use('/api/:endpoint', function(req, res) {
+  console.log('req.originalUrl', req.originalUrl)
+  var url = "http://www.spitcast.com" + req.originalUrl; 
+          // http://www.spitcast.com/api/county/wind/sonoma/
   reportProxy(req, url);
   req.pipe(request(url)).pipe(res);
 });
